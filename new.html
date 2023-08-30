@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@7.0.0/css/all.css" rel="stylesheet">
+
+    <style>
+      .scroll {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+      .scroll-container {
+        position: relative;
+        display: inline-block;
+        line-height: 0; /* To remove whitespace between inline-block elements */
+        bottom:490px; /* Adjust this value to move the entire set up */
+      }
+      .outer-half-circle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 300px; /* Adjust this value */
+        height: 150px; /* Adjust this value */
+        border-top-left-radius: 300px;
+        border-top-right-radius: 300px;
+        border: 2px dashed #ffffff;
+        transform: translateX(20px); /* Adjust this value for alignment */
+      }
+      .inner-half-circle {
+        width: 160px; /* Adjust this value */
+        height: 80px; /* Adjust this value */
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        border: 2px dashed #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        margin-left: 90px;
+      }
+      .scroll-text {
+        font-size: 12px;
+        color: #ffffff;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0;
+      }
+      .custom-input::placeholder {
+    color: white; /* Placeholder text color */
+  }
+  .input-container {
+    background-color:#f3f3f378; /* Gray background color */
+    padding:0px; /* Add padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    width:490px;
+    font-family:'Poppins', sans-serif;
+     font-weight:400;
+     font-size:19px;
+     height:auto;
+    
+
+  }
+
+      .row-white-box:hover {
+  padding: 20px!important;
+  border-radius: 15px!important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)!important;
+  align-items:center!important;
+  /*margin-left: 15%!important;*/
+  margin-bottom: 10px !important;
+
+}
+.new_rect{
+  left:25%;
+  top:1300px;
+  z-index:-1;
+  visibility: hidden !important;
+  /*clip-path: polygon(0% 100%, 100% 100%, 100% 60%, 0% 60%);*/
+}
+
+.row-white-box:hover .new_rect{
+  visibility: visible !important;
+
+}
+
+
+.row-white-box:hover .rectangle{
+  left: 36% !important;
+}
+
+
+.background-container {
+  position: relative;
+  overflow: hidden;
+  background: url('/Rectangle\ 19302.png') no-repeat center center;
+  background-size:cover;
+  width: 49vw;
+  height:49vh;
+
+
+}
+
+
+.background-container2 {
+  position: relative;
+  overflow: hidden;
+  background: url('/Rectangle\ 19301.png') no-repeat center center;
+  background-size:cover;
+  width: 49vw;
+  height:49vh;
+
+}
+
+.background-container3{
+  position: relative;
+  overflow: hidden;
+  background: url('/h1-background-img-1\ 1.png') no-repeat center center;
+  background-size:cover;
+  /*width:100vw;*/
+  height:83vh;
+}
+
+.drop-shadow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.879);
+  opacity: 0.5; /* Adjust opacity as needed */
+  pointer-events: none;
+  transform: translate(0%, 0%) rotate(-180deg); /* Adjust values as needed */
+  z-index: 1;
+}
+div a:hover{
+  text-decoration: underline !important;
+}
+
+
+.navbar-collapse {
+      display: flex;
+      justify-content: center; /* Center the collapsing content horizontally */
+    }
+
+
+    </style>
+    
+    
+    
+
+</head>
+
+<body>
+<div style="background-image: url('/Rectangle\ 19290.png');background-size: cover;
+ background-position: center;height: 100vh">
+ <section class="navigation-bar">
+    <nav class="navbar navbar-expand-lg navbar-dark  pb-4">
+     <div class="container">
+          <!-- navbar brand / title -->
+          <a class="navbar-brand" href="#intro">
+
+      <div class="container">
+             <div class="row">
+               <div class="col">
+                <div class=" me-5" style="font-family: 'Volkhov', serif;font-weight: 700;font-size: 31px;">Travel</div>
+               </div>
+             </div>
+        <div>
+             <div class="row ms-1">
+             <div class="col">
+              <img src="/Arrow 05 (1).png" alt="arrow" class="img-fluid">
+             </div>
+             </div>
+            </div>
+        </div>
+        <!--<div class="container mt-5">
+            <div class="d-flex align-items-end flex-column">
+              <h2>Travel</h2>
+              <img src="/Arrow 05 (1).png" alt="arrow" class="img-fluid">
+            </div>
+          </div>-->
+          </a>
+    
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse "  id="main-nav" >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#topics">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#reviews">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #d9d9d9;">
+                  <li><a class="dropdown-item" href="#">Honeymoon Packages</a></li>
+                  <li><a class="dropdown-item" href="#">Tours Packages</a></li>
+                  <li><a class="dropdown-item" href="#">Musical Events</a></li>
+                  <li><a class="dropdown-item" href="#">Build Package</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Upcoming packages</a>
+              </li>
+            </ul>
+        </div>
+          <div class="nav-item ms-2 d-none d-md-inline">
+            <a class="btn" style="background-color: #DF6951;color: #ffffff;" href="#pricing">Get in Touch</a>
+          </div>
+     </div>
+    </nav> 
+    </section>
+
+    <section class="context">
+      <div class="container ">
+        <div class="row">
+          <div class="col ms-n5">
+          <img src="/Vector 1.png" alt="an icon" class="img-fluid">
+          </div>
+        </div>
+        <div class="row">
+         <div class="col">
+           <div style="font-family:'Poppins', sans-serif; font-weight: 700;font-size: 58px;" class="d-md-inline display-4 text-white">
+               No matter where<br> you’re going to, we’ll<br> take you there
+           </div>
+   
+         </div>
+        </div>
+   
+   
+      </div>
+        
+    </section>
+
+
+
+    <section class="search-tool"> 
+      <div class="input-group input-group-sm" >
+       <div class="container g-0 mt-3">
+        <div class="row">
+         <div class="col-6 d-flex justify-content-center input-container">
+          
+          <input type="text" class="form-control custom-input" placeholder="Where to?" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="width: 110px;background-color: transparent;outline: none;border-right: 2px solid #f3f3f378;border-top: none;border-left: none;border-bottom: none;box-shadow: none;color: white;border-radius: 0%;">
+          <button class="btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-right: 2px solid #f3f3f378;border-top: none;border-left: none;border-bottom: none;border-radius: 0%;height: 63px;">Travel Type</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Adventure</a></li>
+          <li><a class="dropdown-item" href="#">Tourism</a></li>
+          <li><a class="dropdown-item" href="#">Leisure</a></li>
+        </ul>
+        <button class="btn  text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 0%; border-right: 2px solid #f3f3f378;border-top: none;border-left: none;border-bottom: none;">Duration</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">week</a></li>
+          <li><a class="dropdown-item" href="#">month</a></li>
+          <li><a class="dropdown-item" href="#">year</a></li>
+        </ul>
+        <button class="btn  text-white ms-3" type="button" style="background-color: #DF6951;height: 40px!important;margin: auto;width: 120px;">Submit</button>
+         </div>
+        </div>
+       </div>
+
+
+      </div>
+
+      
+    </section>
+   
+    <section class="image_group">
+      <div class="container text-light mt-3">
+           <img src="/Group 81.png" alt="group" class="img-fluid">
+           2,500 people booked Tommorowland Event in last 24 hours
+      </div>
+     </section>
+     <div class="scroll">
+      <div class="scroll-container">
+        <div class="outer-half-circle"></div>
+        <div class="inner-half-circle">
+          <div class="scroll-text">Scroll</div>
+        </div>
+      </div>
+      </div>
+      
+   
+    </section> 
+    
+   
+
+  </div>      
+  
+  <section class="airlines bg-light bd-highlight">
+    <div class="d-flex justify-content-center">
+       <div class=" p-5">
+        <img src="/image 909.png" alt="Fly Emirates">
+
+       </div>
+       <div class=" p-5">
+        <img src="/image 912 (4).png" alt="tivago">
+       </div>
+
+       <div class=" p-5">
+        <img src="/Mask group.png" alt="air bnb">
+
+       </div>
+       <div class=" p-5">
+        <img src="/Mask group (1).png" alt="turkish airlines">
+
+       </div>
+       <div class=" p-5 text-right">
+        <img src="/image 912 (1).png" alt="swiss">
+
+       </div>
+
+
+      
+
+
+
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="display-6 d-flex justify-content-center mt-5 pt-5 pb-2 text-danger" style="font-family:'Poppins', sans-serif; font-weight: 600;font-size: 18px;">
+      CATEGORY
+    </div>
+    <div class="display-4 d-flex justify-content-center mt-2 text-body" style="font-family: 'Volkhov', serif; font-weight:700;font-size: 50px;">
+      We Offer Best Services
+    </div>
+ </section>
+<section class="services">
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="row">
+      <div class="col-3">
+        <div class="row-white-box">
+        <img src="/tour-guide 1.png" alt="tour-guide" class="ms-5 position-relative">
+        <img src="/Rectangle 157.png" alt="second-image" class="position-absolute  mt-5" style="top:auto;transform: translate(-50%, -50%);z-index: -1;left:15%;">
+        <h5 class="display-5 mt-4" style="font-family:'Poppins', sans-serif; font-weight:600;font-size: 20px;">Guided Tours</h5>
+        <h6 class="display-6" style="font-family:'Poppins', sans-serif; font-weight:500;font-size: 16px;">sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="row-white-box"><!--" row-white-box for hovering"-->
+          <img src="/travelling 1.png" alt="travelling" class="ms-5 position-relative">
+          <img src="/Rectangle 158.png" alt="second-image" class="position-absolute mt-5 rectangle" style="top:auto; transform: translate(-50%, -50%);z-index:-1;left: 35%;">
+          <img src="Rectangle 157 (2).png" alt="rect" class="position-absolute new_rect" >
+          <h5 class="display-5" style="font-family:'Poppins', sans-serif; font-weight:600;font-size: 20px;">Best Flights Options</h5>
+          <h6 class="display-6" style="font-family:'Poppins', sans-serif; font-weight:500;font-size: 16px;">sunt qui repellat saepe<br> quo velit aperiam id<br> aliquam placeat.</h6>
+        </div>
+        <!--<img src="/Rectangle 157 (1).png" alt="second-image" class="position-absolute" style="top:190%; left:34%; transform: translate(-50%, -50%);z-index: -1;">-->
+      </div>
+      <div class="col-3">
+        <div class="row-white-box">
+        <img src="/hands 1.png" alt="hands">
+        <img src="/Rectangle 159.png" alt="second-image" class="position-absolute mt-5" style="top:auto; left: 55%; transform: translate(-50%, -50%);z-index: -1;">
+        <h5 class="display-5 mt-4" style="font-family:'Poppins', sans-serif; font-weight:600;font-size: 20px;">Religious Tours</h5>
+        <h6 class="display-6" style="font-family:'Poppins', sans-serif; font-weight:500;font-size: 16px;">sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
+      </div>
+      </div>
+      <div class="col-3">
+        <div class="row-white-box">
+        <img src="/Rectangle 160.png" alt="second-image" class="position-absolute mt-5" style="top:auto; left:77%; transform: translate(-50%, -50%);z-index: -1;">
+        <img src="/medical-team 1.png" alt="medical-team">
+        <h5 class="display-5 mt-3" style="font-family:'Poppins', sans-serif; font-weight:600;font-size: 20px;">Medical insurance</h5>
+        <h6 class="display-6" style="font-family:'Poppins', sans-serif; font-weight:500;font-size:16px;">sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+</section>
+
+
+
+
+
+
+
+ <section class="honeymoon-specials">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-4 mt-5">
+        <img src="/Illustration.png" alt="honeymoon" class="img-fluid">
+      </div>
+      <div class="col-6 ps-5 pe-5">
+        <h6 class="d-flex display-6  mt-5 pt-5 pb-2  lead" style="font-family:'Poppins', sans-serif; font-weight: 700;font-size: 18px;color: #DF6951;">Honeymoon Specials</h6>
+        <h6 class="display-6" style="font-family: 'Volkhov', serif;font-weight: 700;font-size: 50px;">Our Romantic Tropical Destinations</h6>
+        <h6 class="display-6 text-black d-lg-inline d-sm-none" style="font-family: 'poppins', serif; font-weight:400;font-size: 16px;">Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!</h6>
+        <div>
+          <button type="button" class="btn mt-3" style="background-color: #DF6951;color: #ffffff;">View Packages</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="trips">
+    <div class="container ps-5">
+     <div class="row">
+        <div class="col-5 ms-5 ps-5 pe-5">
+          <h6 class="display-6 mt-5" style="font-family:'Poppins', sans-serif; font-weight: 700;font-size: 18px;color: #DF6951;">Fast & Easy</h6>
+          <h6 class="display-6 text-black" style="font-family: 'Volkhov', serif;font-weight:700;">Get Your Favourite Resort Bookings</h6>
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md-2 col-sm-8">
+                <img src="/Group 7.png" alt="rectangle" class="img-fluid">
+              </div>
+              <div class="col-md-10 col-sm-4">
+                <div class="d-flex flex-column justify-content-center h-100">
+                  <h5 class="lead display-5" style="font-family:'Poppins', sans-serif; font-weight:700; font-size: 16px;">Choose Destination</h5>
+                  <h6 class="display-6 d-sm-none d-md-inline" style="font-family:'Poppins', sans-serif; font-weight:400; font-size: 16px; line-height: 19.92px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md-2 col-sm-8">
+                <img src="/Group 12.png" alt="rectangle" class="img-fluid">
+              </div>
+              <div class="col-md-10 col-sm-4">
+                <div class="d-flex flex-column justify-content-center h-100">
+                  <h5 class="lead display-5" style="font-family:'Poppins', sans-serif; font-weight:700; font-size: 16px;">Check Availability</h5>
+                  <h6 class="display-6 d-sm-none d-md-inline" style="font-family:'Poppins', sans-serif; font-weight:400; font-size: 16px; line-height: 19.92px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container mt-2">
+            <div class="row">
+              <div class="col-md-2 col-sm-8">
+                <img src="/Group 11.png" alt="rectangle" class="img-fluid">
+              </div>
+              <div class="col-md-10 col-sm-4">
+                <div class="d-flex flex-column justify-content-center h-100">
+                  <h5 class="lead display-5" style="font-family:'Poppins', sans-serif; font-weight:700; font-size: 16px;">Let’s Go</h5>
+                  <h6 class="display-6 d-sm-none d-md-inline" style="font-family:'Poppins', sans-serif; font-weight:400; font-size: 16px; line-height: 19.92px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+        <div class="col-6">
+          <img src="/Illustration (1).png" alt="plane" class="img-fluid">
+        </div>
+     </div>
+
+    </div>
+
+
+ </section>
+
+ <section class="sepratir">
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 p-0">
+        <img src="/Sepratir.png" alt="united states" class="img-fluid">
+      </div>
+    </div>
+   </div>
+ </section>
+
+ <section class="promotion">
+  <div class="container ms-0 ps-5" >
+    <div class="row">
+      <div class="col-4 ms-5">
+        <h6 class="display-6 mt-5" style="font-family:'Poppins', sans-serif; font-weight: 700;font-size: 18px;color: #DF6951;">Promotion</h6>
+        <h6 class="display-6 text-black " style="font-family: 'Volkhov', serif;font-weight:700;">We Provide You Best Europe Sightseeing Tours</h6>
+        <h6 class="display-6" style="font-family:'Poppins', sans-serif; font-weight:400;font-size: 16px;">Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!</h6>
+        <div>
+          <button type="button" class="btn mt-3" style="background-color: #DF6951;color: #ffffff;">View Packages</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 ms-4">
+      <div class="col-3"style="position: relative;">
+        <img src="/Rectangle 19295.png" alt="destination" class="img-fluid" >
+        <img src="Group 1000001690.png" alt="400$" class="position-absolute" style="position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%); z-index: 1; max-width: 100%; max-height: 100%;">
+        
+      </div>
+      <div class="col-3"style="position: relative;">
+        <img src="Group 1000001691.png" alt="400$" class="position-absolute" style="position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%); z-index: 1; max-width: 100%; max-height: 100%;">
+        <img src="/Rectangle 19296.png" alt="destination" class="img-fluid">
+      </div>
+      <div class="col-3" style="position: relative;">
+        <img src="Group 1000001692.png" alt="400$" class="position-absolute" style="position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%); z-index: 1; max-width: 100%; max-height: 100%;">
+        <img src="/Rectangle 19297.png" alt="destination" class="img-fluid">
+      </div>
+      <div class="col-3 " style="position: relative;">
+
+        <img src="Group 1000001693.png" alt="400$" class="position-absolute" style="position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%); z-index: 1; max-width: 100%; max-height: 100%;">
+        <img src="/Rectangle 19298.png" alt="destination" class="img-fluid" >
+        <img src="/Illustration (2).png" alt="background" style="position: absolute; top:-300px; right:0px; z-index:-1;left:50px; height:550px;">
+        
+      </div>
+    
+    </div>
+   
+
+  </div>
+
+ </section>
+ <section class="Explore">
+ <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-6 mt-5 background-container2 drop-shadow">
+        <div class="d-flex justify-content-center align-items-center mt-5 position-relative " style="height:70%;">
+          <div class=" mb-4 position-absolute" style="z-index: 1;letter-spacing: 5px;height: 100px;font-family:'Poppins', sans-serif; font-weight: 700;font-size: 25px;line-height: 27px;color:#FFEFEC;">PROMOTIONS</div>
+          <div class="mb-4 position-absolute" style="z-index: 1;letter-spacing: 5px; height: 20px;font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;line-height: 27px;color:#ffffff">Explore Nature</div>
+          <img src="/Line-3 (2).png" alt="line" class="position-absolute mt-5 ps-5" style="z-index: 1;margin-left:30%;">
+          <div>
+            <button type="button" class="btn text-white" style="background-color:none;border-color:#FFFFFF;border-radius:7px;border-style: solid;margin-top:125px;font-family:'Poppins', sans-serif; font-weight: 600;font-size:16px;color: white;">View Packages</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 mt-5 background-container drop-shadow" >
+        <div class="d-flex justify-content-center align-items-center mt-5 position-relative " style="height:70%;">
+          <div class=" mb-4 position-absolute" style="z-index: 1;letter-spacing: 5px;height: 100px;font-family:'Poppins', sans-serif; font-weight: 700;font-size: 25px;line-height: 27px;color:#FFEFEC">PROMOTIONS</div>
+          <div class="mb-4 position-absolute" style="z-index: 1;letter-spacing: 5px; height: 20px;font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;line-height: 27px;color:#ffffff">Explore Cities</div>
+          <img src="/Line-8.png" alt="line" class="position-absolute mt-5 ps-5" style="z-index: 1;margin-left:20%;">
+          <div>
+            <button type="button" class="btn text-white" style="background-color:none;border-color:#ffffff;border-radius:7px;border-style: solid;margin-top:130px;font-family:'Poppins', sans-serif; font-weight: 600;font-size:16px;">View Packages</button>
+          </div>
+        </div>
+      </div>
+      
+
+
+    </div>
+ </div>
+
+
+
+</section>
+
+
+
+<section class="trips">
+  <div class="d-flex justify-content-center mt-3" style="font-family:'Poppins', sans-serif; font-weight: 700;font-size: 18px;color: #DF6951;line-height: 27px;">
+    TRENDY
+  </div>
+  <div class="d-flex justify-content-center" style="font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;color: #181E4B;">
+    Our Trending Tour
+  </div>
+  <div class="d-flex justify-content-center" style="font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;color: #181E4B;">
+    Packages
+  </div>
+
+  <div class="container-lg ">
+    <div class="row my-5  align-items-center justify-content-center">
+      <div class="col-4">
+        <div style="position: relative;">
+          <img src="/Rectangle 19305.png" alt="rect">
+          <img src="/Ellipse 623.png" alt="" style="position: absolute; top:250px; left:3px; z-index:1;">
+        </div>
+          <div class="card-body text-start mt-4">
+            <img src="Vector.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+            <img src="/Vector (1).png" alt="" class="ms-4">
+            <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">25 People going</h6>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-5 pe-5 country" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;text-decoration: none;">Bern</a>
+            <div class="d-inline ms-5 ps-5">
+              <i class="fa-solid fa-star" style="color: #ffba0a;"></i>
+              <i class="fa-solid fa-star" style="color: #ffba0a;"></i>
+              <i class="fa-solid fa-star" style="color: #ffba0a;"></i>
+              <i class="fa-solid fa-star" style="color: #ffba0a;"></i>
+              <i class="fa-solid fa-star" style="color: #ffba0a;"></i>
+            </div>
+            <br>
+            <img src="/ep_location.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">Switzerland</h6>
+            <br>
+            <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">1,000$</p>
+            <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+            <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+            <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+              Explore Now
+            </a>
+          </div>
+      </div>
+
+      <div class="col-4">
+        <div style="position: relative;">
+          <img src="/Rectangle 19305 (1).png" alt="rect">
+          <img src="/Ellipse 623 (1).png" alt="" style="position: absolute; top:250px; left:3px; z-index:1;">
+        </div>
+          <div class="card-body text-start mt-4">
+            <img src="Vector.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+            <img src="/Vector (1).png" alt="" class="ms-4">
+            <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">30 People going</h6>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-1 countries" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;text-decoration: none;">Rio de Janeiro</a>
+            <div class="d-inline ms-5 ps-5">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            </div>
+            <br>
+            <img src="/ep_location.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">Brazil</h6>
+            <br>
+            <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">1,223$</p>
+            <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+            <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+            <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+              Explore Now
+            </a>
+          </div>
+      </div>
+
+      <div class="col-4">
+        <div style="position: relative;">
+          <img src="/Rectangle 19305 (2).png" alt="rect">
+          <img src="/Ellipse 623 (2).png" alt="" style="position: absolute; top:250px; left:3px; z-index:1;">
+        </div>
+          <div class="card-body text-start mt-4">
+            <img src="Vector.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+            <img src="/Vector (1).png" alt="" class="ms-4">
+            <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">155 People going</h6>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-5 pe-5 countries" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;text-decoration: none;">Giza</a>
+            <div class="d-inline ms-5 ps-5">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            </div>
+            <br>
+            <img src="/ep_location.png" alt="">
+            <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">Egypt</h6>
+            <br>
+            <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">1,200$</p>
+            <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+            <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+            <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+              Explore Now
+            </a>
+          </div>
+      </div>
+
+
+
+
+
+
+
+  </div>
+  <div class="row my-5  align-items-center justify-content-center">
+    <div class="col-4">
+      <div style="position: relative;">
+        <img src="/Rectangle 19305 (3).png" alt="rect">
+        <img src="/Ellipse 623 (3).png" alt="" style="position: absolute; top:250px; left:10px; z-index:1;">
+      </div>
+        <div class="card-body text-start mt-4">
+          <img src="Vector.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+          <img src="/Vector (1).png" alt="" class="ms-4">
+          <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">25 People going</h6>
+          <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-5 pe-5 countries" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;text-decoration: none;">Tokyo</a>
+            <div class="d-inline ms-5 ps-5">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            </div>
+            <br>
+          <img src="/ep_location.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">Japan</h6>
+          <br>
+          <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">1,500$</p>
+          <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+          <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+          <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+            Explore Now
+          </a>
+        </div>
+    </div>
+
+    <div class="col-4">
+      <div style="position: relative;">
+        <img src="/Rectangle 19305 (4).png" alt="rect">
+        <img src="/Ellipse 623 (4).png" alt="" style="position: absolute; top:250px; left:10px; z-index:1;">
+      </div>
+        <div class="card-body text-start mt-4">
+          <img src="Vector.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+          <img src="/Vector (1).png" alt="" class="ms-4">
+          <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">30 People going</h6>
+          <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-5 pe-5 countries" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;text-decoration:none;">Riyadh</a>
+            <div class="d-inline ms-5 ps-5">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            </div>
+            <br>
+          <img src="/ep_location.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">Saudi Arabia</h6>
+          <br>
+          <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">1,800$</p>
+          <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+          <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+          <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+            Explore Now
+          </a>
+        </div>
+    </div>
+
+    <div class="col-4">
+      <div style="position: relative;">
+        <img src="/Rectangle 19305 (5).png" alt="rect">
+        <img src="/Ellipse 623 (5).png" alt="" style="position: absolute; top:250px; left:10px; z-index:1;">
+      </div>
+        <div class="card-body text-start mt-4">
+          <img src="Vector.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>
+          <img src="/Vector (1).png" alt="" class="ms-4">
+          <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">155 People going</h6>
+          <br>
+            <a href="https://en.wikipedia.org/wiki/Bern" class="card-title mt-2 me-5 pe-5 countries" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px; text-decoration: none;">paris</a>
+            <div class="d-inline ms-5 ps-5">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            <img src="bi_star-fill.png" alt="">
+            </div>
+            <br>
+          <img src="/ep_location.png" alt="">
+          <h6 class="display-6 d-inline " style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">France</h6>
+          <br>
+          <p class="display-5 fw-bold d-inline me-3 ms-2 " style="color: #DF6951;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 29px;">2,000$</p>
+          <p class="display-5 fw-bold d-inline" style="text-decoration: line-through; color:#7D7D7D;font-family:'Poppins', sans-serif; font-weight: 500;font-size: 22px;">1,200$</p>
+          <p class="card-text ms-2 mt-2 d-none d-lg-block" style="font-family:'Poppins', sans-serif; font-weight:400;font-size:12px;color: black;letter-spacing:2px;">Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.</p>
+          <a href="#" class="btn btn-lg mt-1" style="background-color: #DF6951;color: white;">
+            Explore Now
+          </a>
+        </div>
+    </div>
+
+
+  </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+<section class="clients">
+  <div class="container-fluid background-container3">
+      <div class="d-flex justify-content-center align-items-center mt-5 position-relative " style="height:70%;">
+        <div class=" position-absolute" style="z-index: 1;letter-spacing:3px;font-family:'Poppins', sans-serif; font-weight: 700;font-size: 25px;line-height: 18px;color:#DF6951;left: 50%; top:20%; transform: translate(-50%, -50%);">PROMOTIONS</div>
+        <div class=" position-absolute mt-3" style="z-index: 1;letter-spacing: 5px; font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;line-height: 27px;color:#181E4B;left: 50%; top:25%; transform: translate(-50%, -50%);">See What Our Clients Say</div>
+        <div class="mb-4 position-absolute fw-bold" style="z-index: 1;letter-spacing: 5px;font-family:'Volkhov', sans-serif; font-weight: 700;font-size: 50px;line-height: 27px;color:#181E4B; left: 50%; top:39%; transform: translate(-50%, -50%);">About Us</div>
+        <img src="/Travel_Concepts_2 1.png" alt="travel_concepts" class="position-absolute" style="z-index: 1;margin-right:1450px;margin-top:300px;">
+       <div class=" d-flex flex-column align-items-center  ms-5 position-relative" style="font-family:'Poppins', sans-serif; font-weight: 400;font-size:12px;color: #000;border:50px solid #ffffff;background-color: #ffffff;margin-top:25%;border-radius: 10px;text-align: center;">
+        <div class="mt-5">Vel officiis dolor ea illo aut eligendi ullam non laudantium<br> magnam et recusandae molestiae sit iure unde aut<br> voluptate quaerat. Id sunt provident quo possimus<br> impedit vel doloremque obcaecati qui ullam consectetur<br> et ipsum omnis.</div>
+        <div class="fw-bold mt-2">Christine Beckam - Designer</div>
+        <img src="/Ellipse 624.png" alt="Ellipse" class="position-absolute" style="bottom:110px;z-index: 1;">
+        <img src="/Vector (6).png" alt="Vector" class="position-absolute" style="z-index:1;bottom: 100px;right:305px;">
+        </div>
+      </div>
+
+    </div>
+
+    
+
+ 
+
+
+</section>
+
+<section class="footer">
+ <div class="d-flex justify-content-around mt-5">
+    <div class="">
+      <p class="position-relative" style="color:#181E4B;font-family:'Volkhov', sans-serif; font-weight: 700;font-size:32px;">Travel</p>
+      <img src="/Arrow 05 (2).png" alt="arrow" class="position-absolute ms-4" style="margin-top: -2%;">
+      <p style="color: #757095;font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;" class="mt-4">Travel helps companies manage<br> payments easily.</p>
+      <div class="mt-3">
+        <a href="#" class="me-2"><img src="/052-linkedin.png" alt="linkedin"></a>
+        <a href="#" class="me-2"><img src="/Vector (3).png" alt="messenger"></a>
+        <a href="#" class="me-2"><img src="/Vector (4).png" alt="twitter"></a>
+        <a href="#" class="me-2"><img src="/Vector (5).png" alt="infinity"></a>
+        
+      </div>
+    </div>
+    <div class="">
+      <p style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 21px;color: #181433;" class="fw-bold mt-3">Company</p>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration:none;" class="d-block mb-2">About Us</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration: none;" class="d-block mb-2">Careers</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration: none;" class="d-block mb-2">Blog</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433;text-decoration: none;" class="d-block mb-2">Pricing</a>
+    </div>
+    <div class="">
+      <p style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 21px;color: #181433;" class="fw-bold mt-3">Destinations</p>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration:none;" class="d-block mb-1">Maldives</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration: none;" class="d-block mb-1">Los Angelas</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433; text-decoration: none;" class="d-block mb-1">Las Vegas</a>
+      <a href="#" style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;color: #181433;text-decoration: none;" class="d-block mb-1">Torronto</a>
+    </div>
+    <div class="">
+      <p style="font-family: 'Manrope', sans-serif;font-weight:500;font-size: 21px;color: #181433;" class="fw-bold mt-3">Join Our Newsletter</p>
+      <div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Your email address" aria-label="Recipient's username" aria-describedby="basic-addon2" style="color:757095;font-family: 'Manrope', sans-serif;font-weight:500;font-size:16px;background-color: #EEEEFF;border-radius:0px;box-shadow: #EEEEFF;">
+        <button type="button" class="btn input-group-text" style="background-color: #DF6951;color: #ffffff;border-radius: 5px; font-family: 'Manrope', sans-serif;font-weight:500;font-size:16px;">Subscribe</button>
+      </div>
+      <p style="color: #757095;font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;">*Will send you weekly updates for your better
+        tour packages.</p>
+    </div>
+
+
+ </div>
+ <img src="/Rectangle 97.png" alt="line-hr" style="margin-left:8%;">
+ <p style="color: #181433;font-family: 'Manrope', sans-serif;font-weight:500;font-size: 16px;text-align: center;">Copyright @ Xpro 2022. All Rights Reserved.</p>
+</section>
+ 
+    
+ 
+
+
+    <script src="/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+
+
+</html>
+<!--<div class="d-flex justify-content-center p-5">
+    <div>
+      <img src="/Rectangle 19305.png" alt="" class="ps-5 pe-5">
+      <div class="d-flex justify-content-start ms-5">
+        <small>
+          <img src="/Vector.png" alt="">
+          <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">8 days</h6>    
+        </small>
+       <small>
+        <img src="/Vector (1).png" alt="" class="ms-4">
+        <h6 class="display-6 d-inline" style="color: #7D7D7D;font-family:'Poppins', sans-serif; font-weight: 400;font-size: 16px;">25 People going</h6>             
+      </small>
+      </div>
+
+      <div class="d-flex justify-content-between ms-5">
+        <a href="https://en.wikipedia.org/wiki/Bern" style="color:#2F2F2F;font-family:'Poppins', sans-serif; font-weight:700;font-size:29px;" class="mt-5">Bern</a>
+        <div class="d-inline mt-5">
+        <img src="/bi_star-fill.png" alt="star">
+        <img src="/bi_star-fill.png" alt="star">
+        <img src="/bi_star-fill.png" alt="star">
+        <img src="/bi_star-fill.png" alt="star">
+        <img src="/bi_star-fill.png" alt="star">
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <img src="/Rectangle 19305 (1).png" alt="" class="ps-5 pe-5">
+    </div>
+    <div>
+      <img src="/Rectangle 19305 (2).png" alt="" class="ps-5 pe-5">
+    </div>
+
+  </div>-->
